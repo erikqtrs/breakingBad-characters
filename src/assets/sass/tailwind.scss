@@ -1,0 +1,71 @@
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+.body{
+    background: #000000;  /* fallback for old browsers */
+    background: linear-gradient(to right, #035303, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    @apply min-h-screen;
+}
+.cards {
+    @apply flex; 
+    @apply flex-wrap;
+    @apply flex-row;
+    @apply justify-around;
+    perspective: 700;
+}
+
+.wrap {
+    @apply w-56;
+    height: 18rem;
+    @apply mt-4
+}
+
+.card {
+    @apply w-full;
+    @apply h-full;
+    @apply relative;
+    transform-style: preserve-3d;
+    transition: 3s;
+    transition-delay: 2s;
+}
+
+.card:hover{
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    @apply w-full;
+    @apply h-full;
+    @apply absolute;
+    left: 0;
+    top: 0;
+    backface-visibility: hidden;
+}
+
+.front {
+    filter: grayscale(1);
+}
+.front:hover {
+    filter: grayscale(0);
+}
+
+
+.back {
+    @apply text-black;
+    background: rgb(2, 75, 20);
+    background: linear-gradient(rgb(88, 124, 243), rgb(3, 44, 158));
+    transform: rotateY(180deg);
+}
+
+.back:hover {
+    filter: hue-rotate(360deg);
+}
+
+.img {
+   @apply block;
+   @apply w-full;
+   @apply h-full;
+}
